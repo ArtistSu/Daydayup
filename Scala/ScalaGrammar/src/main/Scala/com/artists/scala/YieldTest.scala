@@ -33,10 +33,8 @@ object YieldTest {
       }
     }
 
-    //
+    // Validate
     for(i:Int <- new_arr_bingo) println(i)
-
-
   }
 
 }

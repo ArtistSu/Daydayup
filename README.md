@@ -20,4 +20,5 @@ I hope we can day day up
 ||ScalaStudy| YieldTest|How to use yield in scala|
 ||ScalaStudy| MethodTest|How to use method in scala|
 ||ScalaStudy| FunctionTest|How to use function in scala|
+||ScalaStudy| ImmutableArrayTest|How to use immutable array in scala|
 

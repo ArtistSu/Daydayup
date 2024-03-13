@@ -13,7 +13,7 @@ import scala.Int.int2double
  * 4. Type cast
  * 5. Common methods
  */
-object ImutableArrayTest {
+object ImmutableArrayTest {
   def main(args: Array[String]): Unit = {
     // Array initialization
     val arr:Array[Int] = Array[Int](1,2,3,4,5,6,1)

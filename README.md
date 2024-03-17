@@ -27,4 +27,5 @@ I hope we can day day up
 ||ScalaStudy| SetTest|How to use set|
 ||ScalaStudy| MapTest|How to use map|
 ||ScalaStudy| CollectiveSetValueTest|How to set the value to various variables by collection|
-||ScalaStudy| CastTypeTest|How to cast type(e.g byte -> int)| 
+||ScalaStudy| CastTypeTest|How to cast type(e.g byte -> int)|
+||ScalaStudy| LazyTest|How to use lazy| 

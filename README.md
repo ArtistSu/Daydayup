@@ -24,4 +24,6 @@ I hope we can day day up
 ||ScalaStudy| MutableArrayTest|How to use mutable array buffer|
 ||ScalaStudy| ListTest|How to use immutable/mutable list|
 ||ScalaStudy| ConversionTest|How to convert type A to type B|
-||ScalaStudy| SetTest|How to use set in scala|
+||ScalaStudy| SetTest|How to use set|
+||ScalaStudy| MapTest|How to use map|
+||ScalaStudy| CollectiveSetValueTest|How to set value to various variable by collection| 

@@ -22,4 +22,5 @@ I hope we can day day up
 ||ScalaStudy| FunctionTest|How to use function in scala|
 ||ScalaStudy| ImmutableArrayTest|How to use immutable array in scala|
 ||ScalaStudy| MutableArrayTest|How to use mutable array buffer in scala|
+||ScalaStudy| ListTest|How to use immutable/mutable list in scala|
 

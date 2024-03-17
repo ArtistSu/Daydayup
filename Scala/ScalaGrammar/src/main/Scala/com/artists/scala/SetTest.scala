@@ -95,6 +95,5 @@ object SetTest {
 
     // 6.3 IsEmpty
     println("set_mu is empty? " + set_mu.isEmpty)
-
   }
 }

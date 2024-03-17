@@ -127,7 +127,6 @@ object ImmutableArrayTest {
     for (i: (String, Int) <- com_arr2) {
       println("zipWithIndex i is " + i)
     }
-
   }
 
   /**
@@ -174,4 +173,6 @@ object ImmutableArrayTest {
     val arr4 = for(tuple<-arr3) yield tuple._1+" "+tuple._2
     arr4.mkString(" ")
   }
+
+
 }

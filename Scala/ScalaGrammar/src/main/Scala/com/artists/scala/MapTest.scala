@@ -13,6 +13,8 @@ package com.artists.scala
  * 2.1 Add value
  * 2.2 Remove value
  * 2.3 Iterate
+ *
+ * 3. Zip array to map
  */
 object MapTest {
   def main(args: Array[String]): Unit = {
@@ -98,7 +100,14 @@ object MapTest {
       println(s"Values:${v}")
     }
 
+    /**
+     * 3. Zip arr to map -> if number of elements not match,the
+     * excess will be removed.
+     */
+    val arr_1 = Array(1,2,3)
+    val arr_2 = Array("Allen","Mic")
 
+    println("zip arr to map: " + arr_1.zip(arr_2).toMap.toString())
 
   }
 }

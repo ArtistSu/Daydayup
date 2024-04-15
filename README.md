@@ -26,6 +26,7 @@ I hope we can day day up
 ||ScalaStudy| ConversionTest|How to convert type A to type B|
 ||ScalaStudy| SetTest|How to use set|
 ||ScalaStudy| MapTest|How to use map|
-||ScalaStudy| CollectiveSetValueTest|How to set the value to various variables by collection|
 ||ScalaStudy| CastTypeTest|How to cast type(e.g byte -> int)|
 ||ScalaStudy| LazyTest|How to use lazy| 
+||ScalaStudy| CollectiveSetValueTest|How to set value to various variable by collection|
+||ScalaStudy| src/main/Scala/com/artists/common|How to use these common methods(e.g. foreach, map. faltten)| 

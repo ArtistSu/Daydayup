@@ -2,7 +2,7 @@ package com.artists.common
 
 /**
  * Tip:
- *  tuple does not support flatMap operation
+ * tuple does not support flatMap operation
  * The process of flatMap: map -> flatten
  */
 object FlatMapTest {

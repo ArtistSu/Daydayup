@@ -36,3 +36,4 @@ I hope we can day day up
 ||ScalaStudy| SingletonObject|How to declare singleton object|
 ||ScalaStudy| CompanionObject|How to declare companion object|
 ||ScalaStudy| AccessModifier|How to use access modifier|
+||ScalaStudy| ApplyTest|How to use apply() in class and object|

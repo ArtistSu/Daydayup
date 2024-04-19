@@ -32,3 +32,4 @@ I hope we can day day up
 ||ScalaStudy| src/main/Scala/com/artists/common|How to use these common methods(e.g. foreach, map. faltten)| 
 ||ScalaStudy| Class|How to define a class| 
 ||ScalaStudy| PrimaryConstructor|How to define a primary constructor| 
+||ScalaStudy| AuxiliaryConstructor|How to define a auxiliary constructor|

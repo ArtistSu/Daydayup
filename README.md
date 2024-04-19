@@ -33,3 +33,6 @@ I hope we can day day up
 ||ScalaStudy| Class|How to define a class| 
 ||ScalaStudy| PrimaryConstructor|How to define a primary constructor| 
 ||ScalaStudy| AuxiliaryConstructor|How to define a auxiliary constructor|
+||ScalaStudy| SingletonObject|How to declare singleton object|
+||ScalaStudy| CompanionObject|How to declare companion object|
+||ScalaStudy| AccessModifier|How to use access modifier|

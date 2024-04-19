@@ -30,4 +30,5 @@ I hope we can day day up
 ||ScalaStudy| LazyTest|How to use lazy| 
 ||ScalaStudy| CollectiveSetValueTest|How to set value to various variable by collection|
 ||ScalaStudy| src/main/Scala/com/artists/common|How to use these common methods(e.g. foreach, map. faltten)| 
-||ScalaStudy| Word Count Demo| 
+||ScalaStudy| Class|How to define a class| 
+||ScalaStudy| PrimaryConstructor|How to define a primary constructor| 

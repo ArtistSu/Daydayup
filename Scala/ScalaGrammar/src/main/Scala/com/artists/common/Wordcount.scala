@@ -1,12 +1,9 @@
 package com.artists.common
 
-import java.io.File
-import scala.collection.parallel.CollectionConverters.ImmutableSeqIsParallelizable
 import scala.io.Source
 
 object Wordcount {
   def main(args: Array[String]): Unit = {
-
     // Demo_1
     println("Demo_1")
     val list = List("hello tom hello jack", "hello tom hello world world world")

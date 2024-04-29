@@ -37,3 +37,4 @@ I hope we can day day up
 ||ScalaStudy| CompanionObject|How to declare companion object|
 ||ScalaStudy| AccessModifier|How to use access modifier|
 ||ScalaStudy| ApplyTest|How to use apply() in class and object|
+||ScalaStudy| UnApplyTest|How to use unapply() in class and object|

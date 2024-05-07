@@ -39,3 +39,4 @@ I hope we can day day up
 ||ScalaStudy| ApplyTest|How to use apply() in class and object|
 ||ScalaStudy| UnApplyTest|How to use unapply() in class and object|
 ||ScalaStudy| CaseclassTest|How to use case class|
+||ScalaStudy| AbstractClassTest|How to use abstract class|

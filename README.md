@@ -41,3 +41,4 @@ I hope we can day day up
 ||ScalaStudy| CaseclassTest|How to use case class|
 ||ScalaStudy| AbstractClassTest|How to use abstract class|
 ||ScalaStudy| TraitTest|How to use trait|
+||ScalaStudy| Trait_AbstractClass|When to use abstract class and when to use trait|

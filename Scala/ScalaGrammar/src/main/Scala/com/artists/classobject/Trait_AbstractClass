@@ -1,0 +1,6 @@
+# When we use abstract class and when we use trait
+
+1. Base on primary and secondary relationship you should use a abstract class.
+If there is a extra function, you can use trait.
+2. Prefer traits. It is convenient for a class to extend multiple traits, but it can only extend one abstract class.
+3. If you need to use constructors, you should use a abstract class. Otherwise you should use trait

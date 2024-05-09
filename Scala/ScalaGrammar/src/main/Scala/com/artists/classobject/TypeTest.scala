@@ -9,5 +9,5 @@ class TypeTest {
     val tmp:alias_type = (1,"2",3,"4","5")
 
     type myListtype = scala.collection.immutable.List[Int]
-    val list:myListtype = List[myListtype](1,2,3,4,5,6)
+    val list:myListtype = List[Int](1,2,3,4,5,6)
 }

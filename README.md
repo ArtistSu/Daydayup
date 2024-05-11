@@ -44,4 +44,5 @@ I hope we can day day up
 ||ScalaStudy| Trait_AbstractClass|When to use abstract class and when to use trait|
 ||ScalaStudy| TypeTest|When to use keyword type|
 ||ScalaStudy| MatchTest|How to use match|
+||ScalaStudy| AdvanceFunctionTest|How to use high-order function|
 

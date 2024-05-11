@@ -8,6 +8,10 @@ package com.artists.scala
  *    e.g. calculate(1,2,sub _) -> here sub _ is a function
  *    but scala will help you to convert it -> implicit conversion
  *    e.g. calculate(1,2,sub)
+ * 4. You can also see this way to define a function
+ * e.g.
+ * val [function name]: [(variable_1 type, variable_2 type, ...] => [return variable type] = [(variable_1 name, variable_2 name)] => {[function body]}
+ * val func:(Int,Int) => Int = (x,y) => {x+y}
  */
 object FunctionTest {
   def main(args: Array[String]): Unit = {

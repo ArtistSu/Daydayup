@@ -46,3 +46,4 @@ I hope we can day day up
 ||ScalaStudy| MatchTest|How to use match|
 ||ScalaStudy| AdvanceFunctionTest|How to use high-order function|
 ||ScalaStudy| PartialParameterFuncTest|How to use partial parameters function|
+||ScalaStudy| CurryingTest|How to use currying & implicit keyword|

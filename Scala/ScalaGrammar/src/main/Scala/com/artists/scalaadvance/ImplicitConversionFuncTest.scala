@@ -13,6 +13,9 @@ package main.Scala.com.artists.scalaadvance
  *  2.3 Throw an exception
  * 3. In shell we can use :implicit -v to check how many implicit
  * conversion function by default.
+ * 4. When an implicit conversion method and an implicit conversion
+ * function exist at the same time, that is, if the input parameters and
+ * return types are the same, implicit function > implicit method.
 
  */
 class ImplicitConversionFuncTest {
@@ -36,3 +39,4 @@ object ImplicitConversionFuncTestObj{
     println(int_val.length)
   }
 }
+

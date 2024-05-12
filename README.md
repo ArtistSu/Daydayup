@@ -48,3 +48,4 @@ I hope we can day day up
 ||ScalaStudy| PartialParameterFuncTest|How to use partial parameters function|
 ||ScalaStudy| CurryingTest|How to use currying & implicit keyword|
 ||ScalaStudy| ImplicitConversionFuncTest|How to use implicit fucntion|
+||ScalaStudy| GenericsTest|How to use generic, contrarian, covariance|

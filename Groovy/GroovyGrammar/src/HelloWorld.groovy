@@ -14,7 +14,25 @@
  * 6. Comment -> same with Java, e.g. //
  * 7. The semicolon (;) at the end of the statement can be omitted
  * 8. Classes, methods, and fields are modified by public keyword by default.
+ * 9. Object's properties operation
+ *  Write:
+ *  //Assign values to object properties
+ *  [OBJECT].[PROPERTY_NAME] = [VALUE]
+ *  The setter() of an object
+ *  Constructor of groovy
  *
+ *  Read:
+ *  [OBJECT].[PROPERTY_NAME] -> stu.name
+ *  [OBJECT]["[PROPERTY_NAME]"] -> stu["name"]
+ *  The getter() of an object
+ * 10. The properties of a class will use getter() and setter() to read and write.
+ * 11. Groovy supports sequential structure, branch structure, and loop structure.
+ * 12. Groovy supports various operations.
+ * 13. Basic types are objects in Groovy, it can call objects’ methods
+ * 14. There are single quotes, double quotes, and triple quotes in Groovy.
+ * ’’ → Only a string, can not perform calculations
+ * ”” → Quotable variables ${}, can perform calculations
+ * ’’’ ‘’’ → Template string
  *
  */
 print("Hello World")

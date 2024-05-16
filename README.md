@@ -16,4 +16,5 @@ I hope we can day day up
 |------------|--------|------------|
 |Gradel01|GradleStudy|Use spring initializr to create project|
 |Gradel02|GradleStudy|Use gradle command to create project|
+|Groovy|GroovyStudy|Create a groovy project with IDEA|  
 |ScalaGrammar|ScalaStudy|Scala grammar|

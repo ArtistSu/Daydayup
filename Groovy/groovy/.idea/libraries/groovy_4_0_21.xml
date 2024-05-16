@@ -1,0 +1,73 @@
+<component name="libraryTable">
+  <library name="groovy-4.0.21">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/jackson-dataformat-toml-2.17.0.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-xml-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/gpars-1.2.1.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-jmx-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/jquery-3.5.1.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/junit-jupiter-api-5.10.2.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/testng-7.5.1.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-groovysh-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-cli-picocli-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/jsr166y-1.7.0.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-testng-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-sql-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/snakeyaml-2.2.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/jcommander-1.78.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-ginq-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-astbuilder-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-contracts-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-test-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/jackson-core-2.17.0.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/multiverse-core-0.7.0.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/ant-launcher-1.10.14.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-cli-commons-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-toml-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/junit-4.13.2.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/junit-platform-launcher-1.10.2.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/jline-2.14.6.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/qdox-1.12.1.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-datetime-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/mxparser-1.2.2.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-macro-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-dateutil-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-templates-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/org.abego.treelayout.core-1.0.3.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/commons-cli-1.6.0.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/junit-platform-commons-1.10.2.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/jackson-annotations-2.17.0.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/jackson-databind-2.17.0.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-json-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-typecheckers-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-ant-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/slf4j-api-2.0.12.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/ivy-2.5.2.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-servlet-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-yaml-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/ant-junit-1.10.14.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-test-junit5-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/hamcrest-core-1.3.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-docgenerator-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/junit-platform-engine-1.10.2.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/opentest4j-1.3.0.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-nio-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-groovydoc-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/byte-buddy-1.14.9.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-console-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/xstream-1.4.20.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-swing-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-macro-library-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/junit-jupiter-engine-5.10.2.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/ant-antlr-1.10.14.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/jackson-dataformat-yaml-2.17.0.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/jansi-2.4.1.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/javaparser-core-3.25.10.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/groovy-jsr223-4.0.21.jar!/" />
+      <root url="jar://$USER_HOME$/Software/groovy-4.0.21/lib/ant-1.10.14.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

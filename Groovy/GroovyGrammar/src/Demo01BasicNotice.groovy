@@ -16,6 +16,7 @@
  *  2. stu["name"] =
  *  3. stu.setName()
  *  4. constructor
+ *  e.g. def obj = new Object(bookname: "Note Book")
  *
  *  Read properties:
  *  1. stu.name
@@ -23,5 +24,12 @@
  *  3. stu.getName()
  */
 class Demo01BasicNotice {
+    def description = "Description"
+    def bookName = "Groovy Study Note"
 
+    // No.5 No.6
+    def sale(price){
+        println("The book is ${price}")
+        "The book is $price"
+    }
 }

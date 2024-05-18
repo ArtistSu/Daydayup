@@ -15,7 +15,7 @@ I hope we can day day up
 |Project Name| Branch |FileName| Description|
 |------------|--------|--------|------------|
 |groovy|GroovyStudy|NA|Use IDEA to creat a groovy project|
-|GroovyGrammar|GroovyStudy||Demo01BasicNotice.groovy|Basic Groovy grammar|
+|GroovyGrammar|GroovyStudy|Demo01BasicNotice.groovy|Basic Groovy grammar|
 ||GroovyStudy|Demo01ScriptGroovy.groovy|Basic Groovy grammar test|
 ||GroovyStudy|Demo02Quotation.groovy|Quotation in groovy|
 ||GroovyStudy|Demo03List.groovy|How to use List in groovy|

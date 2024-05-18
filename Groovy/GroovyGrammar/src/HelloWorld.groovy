@@ -19,7 +19,7 @@
  *  //Assign values to object properties
  *  [OBJECT].[PROPERTY_NAME] = [VALUE]
  *  The setter() of an object
- *  Constructor of groovy
+ *  Constructor of groovyGr
  *
  *  Read:
  *  [OBJECT].[PROPERTY_NAME] -> stu.name

@@ -20,3 +20,6 @@ I hope we can day day up
 ||GroovyStudy|Demo02Quotation.groovy|Quotation in groovy|
 ||GroovyStudy|Demo03List.groovy|How to use List in groovy|
 ||GroovyStudy|Demo03Map.groovy|How to use Map in groovy|
+||GroovyStudy|Demo04ImportClass.groovy|How to import class|
+||GroovyStudy|Demo05TryCatch.groovy|How to import class|
+

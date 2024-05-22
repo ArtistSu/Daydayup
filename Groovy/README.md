@@ -22,4 +22,4 @@ I hope we can day day up
 ||GroovyStudy|Demo03Map.groovy|How to use Map in groovy|
 ||GroovyStudy|Demo04ImportClass.groovy|How to import class|
 ||GroovyStudy|Demo05TryCatch.groovy|How to try catch exception|
-
+||GroovyStudy|Demo06Closure.groovy|How to use closure

@@ -14,5 +14,6 @@ I hope we can day day up
 # Project Structure
 |Project Name| Branch | Description|
 |------------|--------|------------|
-|Gradel01|GradleStudy|Use spring initializr to create project|
-|Gradel02|GradleStudy|Use gradle command to create project|
+|Gradle01|GradleStudy|Use spring initializr to create project|
+|Gradle02|GradleStudy|Use gradle command to create project|
+|Gradle03|GradleStudy|Create general JAVA project with Gradle by IDEA|

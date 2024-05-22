@@ -14,7 +14,7 @@ I hope we can day day up
 # Project Structure
 |Project Name| Branch | Description|
 |------------|--------|------------|
-|Gradel01|GradleStudy|Use spring initializr to create project|
-|Gradel02|GradleStudy|Use gradle command to create project|
-|Groovy|GroovyStudy|Create a groovy project with IDEA|
+|gradel01|GradleStudy|Use spring initializr to create project|
+|gradel02|GradleStudy|Use gradle command to create project|
+|gradle03|GradleStudy|Create general JAVA project with Gradle by IDEA|
 |GroovyGrammar|GroovyStudy|Basic groovy grammar|

@@ -14,7 +14,7 @@ I hope we can day day up
 # Project Structure
 |Project Name| Branch |FileName| Description|
 |------------|--------|--------|------------|
-|groovy|GroovyStudy|NA|Use IDEA to creat a groovy project|
+|groovy|GroovyStudy|NA|Use IDEA to create a groovy project|
 |GroovyGrammar|GroovyStudy|Demo01BasicNotice.groovy|Basic Groovy grammar|
 ||GroovyStudy|Demo01ScriptGroovy.groovy|Basic Groovy grammar test|
 ||GroovyStudy|Demo02Quotation.groovy|Quotation in groovy|

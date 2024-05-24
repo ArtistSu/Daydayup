@@ -14,6 +14,7 @@ I hope we can day day up
 # Project Structure
 |Project Name| Branch | Description|
 |------------|--------|------------|
-|Gradle01|GradleStudy|Use spring initializr to create project|
-|Gradle02|GradleStudy|Use gradle command to create project|
-|Gradle03|GradleStudy|Create general JAVA project with Gradle by IDEA|
+|gradle01|GradleStudy|Use spring initializr to create project|
+|gradle02|GradleStudy|Use gradle command to create project|
+|gradle03|GradleStudy|Create general JAVA project with Gradle by IDEA|
+|gradle04|GradleStudy|How to do Junit test in Gradle|

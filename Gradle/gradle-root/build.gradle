@@ -17,3 +17,16 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+task("task_1", {
+    //This will run during the task configuration section
+    println("This is a simple task.")
+
+    // The following will run during the task execution section
+    doFirst {
+        println("task_1 doFirst()")
+    }
+    doLast {
+        println("task_2 doLast()")
+    }
+})

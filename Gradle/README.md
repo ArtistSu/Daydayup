@@ -18,3 +18,4 @@ I hope we can day day up
 |gradle02|GradleStudy|Use gradle command to create project|
 |gradle03|GradleStudy|Create general JAVA project with Gradle by IDEA|
 |gradle04|GradleStudy|How to do Junit test in Gradle|
+|gradle-root|GradleStudy|What is settings.gradle,tasks|

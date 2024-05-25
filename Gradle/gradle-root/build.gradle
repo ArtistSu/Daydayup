@@ -18,7 +18,10 @@ test {
     useJUnitPlatform()
 }
 
-task("task_1", {
+def map = new HashMap<String,Object>()
+map.put("action",{println("task_1 action in map()")})
+
+task(map,"task_1", {
     //This will run during the task configuration section
     println("This is a simple task.")
 
@@ -27,6 +30,15 @@ task("task_1", {
         println("task_1 doFirst()")
     }
     doLast {
-        println("task_2 doLast()")
+        println("task_1 doLast()")
     }
 })
+
+task_1.doFirst{
+    println("task_1 doFirst() outer")
+}
+
+task_1.doLast{
+    println("task_1 doLast() outer")
+}
+

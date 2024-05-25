@@ -1,0 +1,15 @@
+rootProject.name = 'gradle-root'
+include 'sub-project01'
+include 'sub-project02'
+include 'sub-project03'
+
+/**
+ * The configuration can also be
+ *  include(':sub-project01')
+ *  : -> separator, like / in the path e.g. /root/sub-project01
+ *  '[relative-path]' -> base on the root project
+ *
+ *  If you create a sub project of a sub project, the
+ *  configuration should like
+ *  include 'sub-project01:sub-sub-project01'
+ */

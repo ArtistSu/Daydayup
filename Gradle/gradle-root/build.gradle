@@ -1,9 +1,12 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group = 'com.artists'
 version = '1.0-SNAPSHOT'
+
+mainClassName='com.artists.Main'
 
 repositories {
     mavenCentral()
@@ -79,5 +82,13 @@ task cross_project_task_2 {
     dependsOn(":sub-project01:cross_project_task")
     doLast {
         println "This is task in gradle-root"
+    }
+}
+
+// Task Group
+task D {
+    group "Self Definition Task"
+    doLast {
+        println "This is taskD"
     }
 }

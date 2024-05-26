@@ -6,7 +6,7 @@ plugins {
 group = 'com.artists'
 version = '1.0-SNAPSHOT'
 
-mainClassName='com.artists.Main'
+mainClassName = 'com.artists.Main'
 
 repositories {
     mavenCentral()
@@ -58,14 +58,14 @@ task B {
     }
 }
 
-task C(dependsOn:['A','B']){
+task C(dependsOn: ['A', 'B']) {
     doLast {
         println "This is TaskC"
     }
 }
 
 task C_2 {
-    dependsOn=['A','B']
+    dependsOn = ['A', 'B']
     doLast {
         println "This is Task C_2"
     }
@@ -76,7 +76,7 @@ task C_3 {
         println "This is Task C_3"
     }
 }
-C_3.dependsOn=['A','B']
+C_3.dependsOn = ['A', 'B']
 
 task cross_project_task_2 {
     dependsOn(":sub-project01:cross_project_task")
@@ -92,3 +92,67 @@ task D {
         println "This is taskD"
     }
 }
+
+/**
+ * There are 2 ways to create tasks
+ * 1. Use task() We already use this way
+ * e.g. task cross_project_task_2
+ * task("cross_project_task_2")
+ *
+ * 2. Use tasks.register() or tasks.create()
+ */
+tasks.create("E") {
+    doLast {
+        println("This is taskE")
+    }
+}
+
+// register() is delayed creation, tasks will only be created
+// when needed
+tasks.register("f") {
+    doLast {
+        println("This is taskF")
+    }
+}
+
+task(group: "artists", description: "This is internal definition of task properties", "G")
+task "H" {
+    group("artists")
+    description("This is another way to set task properties of task H")
+}
+task "I" {}
+I.group = "artists"
+D.group("artists") // Task D belongs to Self Definition Task, we will move it to artists
+
+/**
+ * Task type
+ * Reference: https://docs.gradle.org/current/dsl/
+ */
+
+// Recursively delete all build files
+tasks.register("myClean", Delete) {
+    for (i in subprojects) {
+        delete i.layout.buildDirectory
+    }
+    delete layout.buildDirectory
+}
+
+// Customise Task
+class CustomTask extends DefaultTask {
+    @TaskAction
+    def doSelf() {
+        println "This is doSelf() in MyTask"
+    }
+}
+
+// def myTask = task MyDefinitionTask(type: CustomTask)
+def myTask = tasks.create("MyTask", CustomTask)
+myTask.doFirst() {
+    println "This is doFirst() in MyTask"
+}
+
+myTask.doLast() {
+    println "This is doLast() in MyTask"
+}
+
+

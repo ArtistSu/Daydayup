@@ -18,3 +18,4 @@ I hope we can day day up
 |gradel02|GradleStudy|Use gradle command to create project|
 |gradle03|GradleStudy|Create general JAVA project with Gradle by IDEA|
 |GroovyGrammar|GroovyStudy|Basic groovy grammar|
+|ScalaGrammar|ScalaStudy|Scala grammar|

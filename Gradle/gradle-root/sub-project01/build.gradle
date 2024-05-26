@@ -17,3 +17,9 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+task cross_project_task {
+    doLast {
+        println "This is task in sub-project01"
+    }
+}

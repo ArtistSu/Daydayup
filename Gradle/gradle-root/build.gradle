@@ -18,10 +18,10 @@ test {
     useJUnitPlatform()
 }
 
-def map = new HashMap<String,Object>()
-map.put("action",{println("task_1 action in map()")})
+def map = new HashMap<String, Object>()
+map.put("action", { println("task_1 action in map()") })
 
-task(map,"task_1", {
+task(map, "task_1", {
     //This will run during the task configuration section
     println("This is a simple task.")
 
@@ -34,11 +34,50 @@ task(map,"task_1", {
     }
 })
 
-task_1.doFirst{
+task_1.doFirst {
     println("task_1 doFirst() outer")
 }
 
-task_1.doLast{
+task_1.doLast {
     println("task_1 doLast() outer")
 }
 
+// Task Dependencies
+task A {
+    doLast {
+        println "This is TaskA"
+    }
+}
+
+task B {
+    doLast {
+        println "This is TaskB"
+    }
+}
+
+task C(dependsOn:['A','B']){
+    doLast {
+        println "This is TaskC"
+    }
+}
+
+task C_2 {
+    dependsOn=['A','B']
+    doLast {
+        println "This is Task C_2"
+    }
+}
+
+task C_3 {
+    doLast {
+        println "This is Task C_3"
+    }
+}
+C_3.dependsOn=['A','B']
+
+task cross_project_task_2 {
+    dependsOn(":sub-project01:cross_project_task")
+    doLast {
+        println "This is task in gradle-root"
+    }
+}

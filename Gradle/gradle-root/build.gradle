@@ -168,3 +168,16 @@ myTask.doLast() {
 }
 tasks.named('task0'){dependsOn('task2','task3')}
 
+/**
+ * Closing and opening tasks
+ * 1. Internal set enable(false), false means the task will be skipped.
+ * 2. Outer set [task name].enabled = false, false means the task will be skipped.
+ */
+
+task disableTask{
+    doLast{
+        println "This task is disable task"
+    }
+    enabled(false) // The default is true
+}
+//disableTask.enabled=false

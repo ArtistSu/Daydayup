@@ -200,3 +200,17 @@ task timeoutTask_2 {
         println "This is task timeoutTask_2"
     }
 }
+
+/**
+ * Find task
+ */
+task findTask{
+    doLast {
+        println "This is a task about finding task."
+    }
+}
+
+tasks.findByName("findTask").doFirst {println "Add doFirst() before findTask byName"}
+tasks.getByName("findTask").doFirst {println "Add doFirst() before findTask getName"}
+tasks.findByPath(":findTask").doFirst {println "Add doFirst() before findTask byPath"}
+tasks.getByPath(":findTask").doFirst {println "Add doFirst() before findTask getPath"}

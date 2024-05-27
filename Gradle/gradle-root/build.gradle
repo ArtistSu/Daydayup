@@ -1,3 +1,5 @@
+import java.time.Duration
+
 plugins {
     id 'java'
     id 'application'
@@ -181,3 +183,20 @@ task disableTask{
     enabled(false) // The default is true
 }
 //disableTask.enabled=false
+
+/**
+ * Timeout Task
+ */
+task timeoutTask_1 {
+    doLast{
+        Thread.sleep(1000)
+        println "This is task timeoutTask_1"
+    }
+    timeout= Duration.ofMillis(500)
+}
+
+task timeoutTask_2 {
+    doLast{
+        println "This is task timeoutTask_2"
+    }
+}

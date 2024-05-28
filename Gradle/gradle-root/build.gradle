@@ -228,8 +228,30 @@ task "taskExist"{
     }
 }
 
-tasks.addRule("[Description of rule]",{
-    def taskName -> task(taskName){
-        println "The unknow object is ${taskName}"
+//tasks.addRule("[Description of rule]",{
+//    def taskName -> task(taskName){
+//        println "The unknow object is ${taskName}"
+//    }
+//})
+
+/**
+ * onlyIf
+ * Before you test, please ensure the line 231-235 comment out
+ * first. Why? We can only use 248, and 249 to add a property
+ * to the project. Task is a property of the project object as
+ * well.
+ */
+task "onlyIfTask" {
+
+    doLast {
+        println "This is onlyIfTask."
     }
-})
+}
+ext.propertyExist=true
+ext {
+    propertyExist_2=true
+}
+onlyIfTask.onlyIf {project.hasProperty("propertyExist")}
+
+task "propertyExist_3" { println "100% task is a property of the project object"}
+onlyIfTask.onlyIf {project.hasProperty("propertyExist_3")}

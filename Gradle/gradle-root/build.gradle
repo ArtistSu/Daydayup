@@ -214,3 +214,22 @@ tasks.findByName("findTask").doFirst {println "Add doFirst() before findTask byN
 tasks.getByName("findTask").doFirst {println "Add doFirst() before findTask getName"}
 tasks.findByPath(":findTask").doFirst {println "Add doFirst() before findTask byPath"}
 tasks.getByPath(":findTask").doFirst {println "Add doFirst() before findTask getPath"}
+
+/**
+ * Task doesn't exist
+ * If you run gradle abc taskExist -> report an error in normal
+ * For now it will print the hint, addRule([Description], Closure)
+ * The given rule is invoked when an unknown object is requested by name.
+ * The abc is the unknown object.
+ */
+task "taskExist"{
+    doLast {
+        println "This is taskExist."
+    }
+}
+
+tasks.addRule("[Description of rule]",{
+    def taskName -> task(taskName){
+        println "The unknow object is ${taskName}"
+    }
+})

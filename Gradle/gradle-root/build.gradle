@@ -271,3 +271,51 @@ task nonDefaultTask{
     }
 }
 defaultTasks 'defaultTask'
+
+/**
+ * Local File Operation
+ */
+// Relative Path
+File relative = file('src/relativePath.xml')
+relative.createNewFile()
+
+// Absolute Path
+File absolute = file('C:\\GitRepository\\Daydayup\\Gradle\\gradle-root\\src\\absolutePath.xml')
+absolute.createNewFile()
+
+// New File
+File newFile = new File('src/newFile.xml')
+newFile.createNewFile()
+
+/**
+ * File Collection
+ */
+FileCollection fileCollection = files('src/fileCollection_1.xml',['src/fileCollection_2.xml','src/fileCollection_3.xml'])
+fileCollection.forEach {
+    item -> {
+        println(item.name)
+        item.createNewFile()
+    }
+}
+
+// Convert fileCollection to Set
+Set filesSet = fileCollection.files
+for (def i in filesSet){
+    println "fileSet " + i.exists()
+}
+
+Set fileSet_2 = fileCollection as Set
+for (def i in fileSet_2){
+    println "fileSet_2 " +i.exists()
+}
+
+// Convert fileCollection to List
+Set fileList = fileCollection as List
+
+// Add or remove file of fileCollection
+def addFile  = fileCollection + files('src/fileCollection_4.xml')
+def removeFile = fileCollection - files('src/fileCollection_4.xml')
+
+addFile.forEach { File item -> {
+    println "AddFile " + item.name
+}}

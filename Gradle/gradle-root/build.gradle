@@ -402,3 +402,17 @@ task copyTasks_5  {
         }
     }
 }
+
+/**
+ * Archive File
+ * archiveTask(type:Zip) -> type is the target type you want to use
+ * Target Zip name = [archiveBaseName]-[archiveAppendix]-[archiveVersion]-[archiveClassifier].[archiveExtension]
+ * Target file path  is
+ */
+def archivesDirPath = layout.buildDirectory.dir('archiveFile')
+task archiveTask(type:Zip) {
+    from 'src/main/java/com/artists/TestCopyFile.csv'
+    into 'build'
+    archiveBaseName ='archiveTask'
+    destinationDirectory= archivesDirPath
+}

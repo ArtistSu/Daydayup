@@ -319,3 +319,27 @@ def removeFile = fileCollection - files('src/fileCollection_4.xml')
 addFile.forEach { File item -> {
     println "AddFile " + item.name
 }}
+
+/**
+ * File Tree
+ * 1. Use path to create file tree object
+ * 2. Use closure to create file tree object
+ * 3. Use path and closure to create file tree
+ */
+ConfigurableFileTree configurableFileTree = fileTree('src/main')
+configurableFileTree.forEach (item->{
+    println "File tree - ${item.name}"
+})
+
+// Exclude Main.java -> It won't print anything
+configurableFileTree.exclude("**/*.java").forEach (item->{
+    println "File tree exclude - ${item.name}"
+})
+
+// 2. Use closure to create file tree
+def tree = fileTree('src/main').include("**/*.java")
+tree.forEach (item -> {println "Use closure to create file tree  - ${item.name}"})
+
+// 3. Use path and closure to create file tree
+tree = fileTree(dir: 'src/main',include:'**/*.java')
+tree = fileTree(dir: 'src/main',includes:['**/*.java','**/*.xml'],excludes: '**/*Txt*/**')

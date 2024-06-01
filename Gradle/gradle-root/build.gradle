@@ -342,4 +342,63 @@ tree.forEach (item -> {println "Use closure to create file tree  - ${item.name}"
 
 // 3. Use path and closure to create file tree
 tree = fileTree(dir: 'src/main',include:'**/*.java')
-tree = fileTree(dir: 'src/main',includes:['**/*.java','**/*.xml'],excludes: '**/*Txt*/**')
+tree = fileTree(dir: 'src/main',includes:['**/*.java','**/*.xml'],exclude: '**/*Txt*/**')
+
+/**
+ * File Copy
+ * from([file path])
+ * into([directory path])
+ * 1. If file path is a directory -> copy all files in this directory
+ * 2. If file path is a file -> copy this file
+ * 3. If file path is a zip -> copy file in this zip
+ */
+task copyTasks(type:Copy){
+        // Copy files in the folder. If the folder doesn't exist, it will be ignored.
+        from 'src/main/webapp'
+        // Copy a specific file
+        from 'src/main/java/com/artists/TestCopyFile.csv'
+        // Copy from zip
+        from zipTree('src/main/TestZip.zip')
+        // Copy files to target directory
+        into 'build/copyFile'
+    //into this.buildDir.absolutePath
+}
+
+// only copy .csv file
+task copyTasks_2(type:Copy){
+    from 'src/main/java/com/artists/TestCopyFile.csv'
+    from zipTree('src/main/TestZip.zip')
+    include('**/*.csv')
+    // exclude('**/*.csv')
+    into 'build/copyFile_2'
+}
+
+// rename the file
+task copyTasks_3(type:Copy){
+    from 'src/main/java/com/artists/TestCopyFile.csv'
+    rename { def fileName ->
+        fileName.replace('CopyFile','CopyFile_3')
+
+    }
+    into 'build/copyFile_3'
+}
+
+// copy()
+task copyTasks_4  {
+    copy {
+        from 'src/main/java/com/artists/TestCopyFile.csv'
+        into 'build/copyFile_4'
+    }
+}
+
+// define input & output outside
+task copyTasks_5  {
+    inputs.file 'src/main/java/com/artists/TestCopyFile.csv'
+    outputs.dir 'build/copyFile_5'
+    doLast{
+        copy {
+            from 'src/main/java/com/artists/TestCopyFile.csv'
+            into 'build/copyFile_5'
+        }
+    }
+}

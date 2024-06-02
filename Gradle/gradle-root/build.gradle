@@ -14,9 +14,27 @@ repositories {
     mavenCentral()
 }
 
+/**
+ * There are 3 kind of dependencies:
+ * 1. Direct Dependency -> [Dependency type][Dependency group] [Dependency name][Dependency version]
+ * 2. Project Dependency
+ * 3. Local Jar Dependency -> can use file collection & file tree
+ */
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    // 1. Direct Dependency
+    implementation group: 'log4j', name: 'log4j', version: '1.2.17'
+    implementation 'log4j:log4j:1.2.17'
+
+    // 2. Project Dependency, you must define this module in settings.gradle
+    implementation project(':sub-project01')
+
+    // 3. Local Jar Dependency
+    // Dependent on mysql.jar under lib, lib and src are the same level directories
+    implementation files('lib/mysql.jar','lib/log4j.jar')
+    // Dependent on all jars under lib directory, can also use excludes
+    implementation fileTree('dir':'lib',includes: ['*.jar'])
 }
 
 test {

@@ -35,7 +35,31 @@ dependencies {
     implementation files('lib/mysql.jar','lib/log4j.jar')
     // Dependent on all jars under lib directory, can also use excludes
     implementation fileTree('dir':'lib',includes: ['*.jar'])
+
+    // Exclude dependencies
+    implementation('org.hibernate:hibernate-core:3.6.3.Final'){
+//        exclude group:'org.slf4j'
+
+//        // You can also use module to exclude the dependency
+//        exclude module:'slf4j-api'
+//        exclude group:'org.slf4j',module:'slf4j-api'
+//        transitive(false)
+    }
+    implementation 'org.slf4j:slf4j-api:1.4.0!!'
+    implementation 'org.slf4j:slf4j-api:1.4.0'{
+        version{
+            strictly("1.4.0")
+        }
+    }
+
 }
+
+// When there is dependencies conflict, it will failed during the build stage
+//configurations.all(){
+//    Configuration configuration -> {
+//        configuration.resolutionStrategy.failOnVersionConflict()
+//    }
+//}
 
 test {
     useJUnitPlatform()

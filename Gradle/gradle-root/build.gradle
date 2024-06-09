@@ -46,11 +46,11 @@ dependencies {
 //        transitive(false)
     }
     implementation 'org.slf4j:slf4j-api:1.4.0!!'
-    implementation 'org.slf4j:slf4j-api:1.4.0'{
-        version{
-            strictly("1.4.0")
-        }
-    }
+//    implementation 'org.slf4j:slf4j-api:1.4.0'{
+//        version{
+//            strictly("1.4.0")
+//        }
+//    }
 
 }
 
@@ -457,4 +457,15 @@ task archiveTask(type:Zip) {
     into 'build'
     archiveBaseName ='archiveTask'
     destinationDirectory= archivesDirPath
+}
+
+/**
+ * Script Plugin
+ * apply from: [file absolute path | relative path]
+ */
+apply from:'script_plugin.gradle'
+task scriptPluginTest{
+    doLast {
+        println("The author is ${author}, and JDK version is ${conf.jdkVersion}, the spring version is ${spring.version}")
+    }
 }

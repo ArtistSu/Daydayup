@@ -1,0 +1,11 @@
+// This is for script_plugin test
+
+ext {
+    author = "ArtistS"
+    conf=[
+            jdkVersion: JavaVersion.VERSION_1_8
+    ]
+    spring=[
+            version:'5.0.0'
+    ]
+}

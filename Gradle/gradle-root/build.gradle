@@ -1,9 +1,26 @@
 import java.time.Duration
 
+/**
+ * Binary Plugins
+ */
+// i.Use plugins DSL
 plugins {
     id 'java'
     id 'application'
+    // Third-party plugin
+    id("hmcts.ccd.sdk") version "5.5.6"
 }
+// 2. apply(map specific parameters)
+// apply[plugin id || Full Class Name || Plugin Class Name]
+//apply plugin:'java' // plugin id
+//apply plugin:org.gradle.api.plugins.JavaPlugin // Full Class Name
+// org.gradle.api.plugins default import
+//apply plugin:JavaPlugin // Plugin Class Name
+
+// 3. apply(closure)
+//apply {
+//    plugin 'java'
+//}
 
 group = 'com.artists'
 version = '1.0-SNAPSHOT'

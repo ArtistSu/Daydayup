@@ -2,7 +2,6 @@ rootProject.name = 'gradle-root'
 include 'sub-project01'
 include 'sub-project02'
 include 'sub-project03'
-
 /**
  * The configuration can also be
  *  include(':sub-project01')

@@ -37,6 +37,22 @@ class GreetingPlugin implements Plugin<Project> {
 // Apply the plugin
 apply plugin: GreetingPlugin
 
+/**
+ * Apply Global Custom Plugin
+ */
+//apply plugin: 'java-gradle-plugin'
+//gradlePlugin {
+//    plugins {
+//        greeting {
+//            // plugin id
+//            id = 'BuildSrcPlugin'
+//            // implementation class
+//            implementationClass = 'com.artists.BuildSrcPlugin'
+//        }
+//    }
+//}
+apply plugin: 'BuildSrcPlugin'
+
 group = 'com.artists'
 version = '1.0-SNAPSHOT'
 
@@ -83,7 +99,6 @@ dependencies {
 //            strictly("1.4.0")
 //        }
 //    }
-
 }
 
 // When there is dependencies conflict, it will failed during the build stage

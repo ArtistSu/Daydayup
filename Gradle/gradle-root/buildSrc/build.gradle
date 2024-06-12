@@ -1,0 +1,23 @@
+apply plugin:'groovy' // indispensable
+apply plugin:'maven-publish'
+
+dependencies{
+    implementation gradleApi() // indispensable
+    implementation localGroovy() // indispensable
+}
+
+repositories {
+    google()
+    jcenter()
+    mavenCentral() // indispensable
+}
+
+// Set the entry as src/main/groovy
+sourceSets{
+    main{
+        groovy {
+            srcDir 'src/main/groovy'
+        }
+    }
+}
+

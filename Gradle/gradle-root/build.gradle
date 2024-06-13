@@ -1,5 +1,16 @@
 import java.time.Duration
-
+/**
+ * Custom plugin in all project
+ * buildscript must at top
+ */
+buildscript {
+    repositories {
+        maven {url "$rootDir/lib/release"}
+    }
+    dependencies {
+        classpath "com.artists.plugin:library:1.0"
+    }
+}
 /**
  * Binary Plugins
  */
@@ -36,9 +47,11 @@ class GreetingPlugin implements Plugin<Project> {
 }
 // Apply the plugin
 apply plugin: GreetingPlugin
+apply plugin: 'GlobalBuildSrcPlugin'
+
 
 /**
- * Apply Global Custom Plugin
+ * Apply Global Custom Plugin in current project
  */
 //apply plugin: 'java-gradle-plugin'
 //gradlePlugin {
@@ -52,6 +65,8 @@ apply plugin: GreetingPlugin
 //    }
 //}
 apply plugin: 'BuildSrcPlugin'
+
+
 
 group = 'com.artists'
 version = '1.0-SNAPSHOT'

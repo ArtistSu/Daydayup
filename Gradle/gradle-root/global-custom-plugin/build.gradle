@@ -1,0 +1,48 @@
+apply plugin:'groovy' // indispensable
+apply plugin:'maven-publish'
+
+dependencies{
+    implementation gradleApi() // indispensable
+    implementation localGroovy() // indispensable
+}
+
+repositories {
+    google()
+    jcenter()
+    mavenCentral() // indispensable
+}
+
+// Set the entry as src/main/groovy
+sourceSets{
+    main{
+        groovy {
+            srcDir 'src/main/groovy'
+        }
+    }
+}
+
+publishing {
+    publications {
+        myLibrary(MavenPublication){
+            groupId = 'com.artists.plugin'
+            artifactId = 'library'
+            version = '1.0'
+            from components.java // publish jar
+            // from components.web // publish war
+        }
+    }
+    repositories {
+        maven {url "$rootDir/lib/release"}
+        // Publish to private nexus repository
+//        maven {
+//            name = 'myRepo' // repository name (Optional)
+//            url = layout.buildDirectory.dir("repo") // local maven repository
+//            url = 'http://artists/repo' // private maven repository
+//            credentials {
+//                username: 'Allen'
+//                password: 'secret'
+//            }
+//        }
+    }
+}
+

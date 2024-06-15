@@ -1,0 +1,86 @@
+// Specify the JDK version to compile source code(Can only use with java plugin)
+// Related to compile env
+sourceCompatibility = 1.8
+// Generate specific JDK version's class file(Can only use with Java plugin)
+// Related to running env
+targetCompatibility = 1.8
+// Compile character set encoding
+compileJava.options.encoding "UTF-8"
+// Test character set encoding
+compileTestJava.options.encoding "UTF-8"
+// Compile JAVA file with UTF-8 -> source code
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+// Compile JAVA file with UTF-8 -> doc
+tasks.withType(Javadoc) {
+    options.encoding "UTF-8"
+}
+
+/**
+ * Repositories
+ * Gradle will try to find the dependencies by the order
+ */
+repositories {
+    maven { url 'file:///D:/repos/mavenrepos3.5.4' }
+    maven { url "$rootDir/lib/release" }
+    // Try to find dependencies in local Maven Repositories
+    mavenLocal()
+    // Try to find dependencies in third-party repositories and private repositories
+    maven { name "Alibaba"; url "https://maven.aliyun.com/repository/public" }
+    maven { name "Bestek"; url "https://nexus.bsdn.org/content/groups/public" }
+    // Try to find dependencies in remote Maven repositories
+    mavenCentral()
+    // Try to find dependencies in google repositories
+    google()
+}
+
+/**
+ * allprojects
+ * allprojects will configure root project + child project
+ * It will print
+ * gradle-root
+ * buildSrc
+ * gloal-custom-plugin
+ * sub-project01
+ * sub-project02
+ * sub-project03
+ */
+allprojects {
+    tasks.create('configureAllProject') {
+        println "project name is $project.name"
+    }
+}
+
+/**
+ * Sub-projects
+ * subprojects will configure all child projects
+ * It will print
+ * buildSrc
+ * gloal-custom-plugin
+ * sub-project01
+ * sub-project02
+ * sub-project03
+ */
+subprojects {
+    tasks.create('configureAllProject') {
+        println "project name is $project.name"
+    }
+}
+
+/**
+ * project
+ * If you configure repositories and dependencies in the root
+ * project, these dependencies can only be used in the root
+ * project. If you want to use in the child project, you should
+ * configure them by project.
+ * You can use project('[sub project name exist in settings.gradle]')
+ * to configure a specific project.
+ * E.g. Add a dependencies into the sub-project01
+ */
+project('sub-project01'){
+    apply plugin: 'java'
+    dependencies {
+        implementation 'log4j:log4j:1.2.17'
+    }
+}

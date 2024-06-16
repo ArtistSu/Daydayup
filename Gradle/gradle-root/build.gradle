@@ -20,6 +20,8 @@ plugins {
     id 'application'
     // Third-party plugin
     id("hmcts.ccd.sdk") version "5.5.6"
+    id 'maven-publish'
+    id 'java-library' // If publish war, need war plugin
 }
 // 2. apply(map specific parameters)
 // apply[plugin id || Full Class Name || Plugin Class Name]
@@ -529,5 +531,40 @@ apply from:'script_plugin.gradle'
 task scriptPluginTest{
     doLast {
         println("The author is ${author}, and JDK version is ${conf.jdkVersion}, the spring version is ${spring.version}")
+    }
+}
+
+/**
+ * Publish a project
+ */
+publishing {
+    publications {
+        myLibrary(MavenPublication){
+            groupId='org.gradle.sample'
+            artifactId='library'
+            version='1.0'
+            from components.java // publish jar
+//            from components.web // publish war
+        }
+    }
+    repositories{
+        // Path of local maven repository: $USER_HOME/.m2/repository
+        mavenLocal()
+        // Publish to private repository
+        maven{
+            name='myRepo' // Repository name(optional)
+            // Publish address can be local repository or Maven private repository
+            def releasesRepoUrl=layout.buildDirectory.dir('repos/releases')
+            def snapshotsRepoUrl=layout.buildDirectory.dir('repos/snapshots')
+            //  url is required not optional
+            url = version.endsWith('SNAPSHOT')?snapshotsRepoUrl:releasesRepoUrl
+            // If you want to publish to remote private maven repository
+            // url = 'http://my.artists/repo'
+            // Credential
+//            credentials {
+//                username = 'joe'
+//                password = 'secret'
+//            }
+        }
     }
 }

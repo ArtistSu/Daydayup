@@ -1,3 +1,25 @@
+/**
+ * Build Script
+ * 1. buildscript must at the top of the build.gradle
+ * 2. buildscript use for multiple project build,
+ * dependencies can use in all sub project buildscript.
+ * 3. buildscript dependencies can be Gradle plugin.
+ */
+buildscript {
+    ext{
+        springBootVersion = "2.3.3.RELEASE"
+    }
+    repositories{
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public'}
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+apply plugin: 'java' // core plugin, no need to import in advance
+apply plugin: 'org.springframework.boot' // Community plugin, need to import in advance, no need to write version
 // Specify the JDK version to compile source code(Can only use with java plugin)
 // Related to compile env
 sourceCompatibility = 1.8
@@ -82,5 +104,28 @@ project('sub-project01'){
     apply plugin: 'java'
     dependencies {
         implementation 'log4j:log4j:1.2.17'
+    }
+}
+
+/**
+ * ext
+ * Add extra properties, the properties can use in project,
+ * task, and sub project.
+ */
+// Define a age property of Project
+ext.age=18
+// Define multiple properties
+ext {
+    phone = "13291175728"
+    address = "London"
+}
+// Define property in task
+task extProperty {
+    ext{
+        desc = "Brilliant"
+    }
+    doLast {
+        println "Age is ${age}"
+        println "Desc is ${desc}"
     }
 }

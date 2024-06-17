@@ -13,3 +13,56 @@ include 'global-custom-plugin'
  *  configuration should like
  *  include 'sub-project01:sub-sub-project01'
  */
+
+gradle.settingsEvaluated {
+    println "Hook1: settingsEvaluated"
+}
+gradle.projectsLoaded {
+    println "Hook2: projectLoaded"
+}
+
+def projectName = ""
+gradle.addProjectEvaluationListener(new ProjectEvaluationListener() {
+    @Override
+    void beforeEvaluate(Project project) {
+        projectName = project.name
+        println "Hook3: ${project.name} Project beforeEvaluate"
+    }
+
+    @Override
+    void afterEvaluate(Project project, ProjectState state) {
+        println "Hook4: ${project.name} Project afterEvaluate"
+    }
+})
+
+gradle.beforeProject {
+    println "Hook3_2: ${projectName} beforeProject..."
+}
+gradle.afterProject {
+    println "Hook4_2: ${projectName} afterProject..."
+}
+
+def rootProjectName = rootProject.getName()
+gradle.projectsEvaluated {
+    println "Hook5: ${rootProjectName} projectsEvaluated..."
+}
+
+gradle.taskGraph.whenReady {
+    println "Hook6: ${rootProjectName} whenReady..."
+}
+
+gradle.taskGraph.beforeTask {
+    task -> {
+        println "Hook7: This is the task ${task.name} -> beforeTask"
+    }
+}
+
+gradle.taskGraph.afterTask {
+    task -> {
+        println "Hook8: This is the task ${task.name} -> afterTask"
+    }
+}
+
+gradle.buildFinished {
+    println "Hook9: buildFinished..."
+}

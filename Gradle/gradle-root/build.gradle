@@ -568,3 +568,16 @@ publishing {
         }
     }
 }
+
+/**
+ * Hook test
+ */
+task Hook_A {
+    println "root Hook_A"
+    doFirst {
+        println "root Hook_A doFirst"
+    }
+    doLast{
+        println "root Hook_A doLast"
+    }
+}

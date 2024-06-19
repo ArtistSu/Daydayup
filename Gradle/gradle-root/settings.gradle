@@ -14,55 +14,121 @@ include 'global-custom-plugin'
  *  include 'sub-project01:sub-sub-project01'
  */
 
-gradle.settingsEvaluated {
-    println "Hook1: settingsEvaluated"
-}
+//gradle.settingsEvaluated {
+//    println "Hook1: settingsEvaluated"
+//}
+//gradle.projectsLoaded {
+//    println "Hook2: projectLoaded"
+//}
+//
+//def projectName = ""
+//gradle.addProjectEvaluationListener(new ProjectEvaluationListener() {
+//    @Override
+//    void beforeEvaluate(Project project) {
+//        projectName = project.name
+//        println "Hook3: ${project.name} Project beforeEvaluate"
+//    }
+//
+//    @Override
+//    void afterEvaluate(Project project, ProjectState state) {
+//        println "Hook4: ${project.name} Project afterEvaluate"
+//    }
+//})
+//
+//gradle.beforeProject {
+//    println "Hook3_2: ${projectName} beforeProject..."
+//}
+//gradle.afterProject {
+//    println "Hook4_2: ${projectName} afterProject..."
+//}
+//
+//def rootProjectName = rootProject.getName()
+//gradle.projectsEvaluated {
+//    println "Hook5: ${rootProjectName} projectsEvaluated..."
+//}
+//
+//gradle.taskGraph.whenReady {
+//    println "Hook6: ${rootProjectName} whenReady..."
+//}
+//
+//gradle.taskGraph.beforeTask {
+//    task -> {
+//        println "Hook7: This is the task ${task.name} -> beforeTask"
+//    }
+//}
+//
+//gradle.taskGraph.afterTask {
+//    task -> {
+//        println "Hook8: This is the task ${task.name} -> afterTask"
+//    }
+//}
+//
+//gradle.buildFinished {
+//    println "Hook9: buildFinished..."
+//}
+
+/**
+ * Example -> Calculate time of each stage
+ */
+def projectName = rootProject.getName()
+long beginOfSetting = System.currentTimeMillis()
+def beginOfConfig
+def configHasBegin = false
+def beginOfProjectConfig = new HashMap()
+def beginOfTaskExecute
 gradle.projectsLoaded {
-    println "Hook2: projectLoaded"
+    println "${projectName} spends ${System.currentTimeMillis() - beginOfSetting} ms on initialization stage"
 }
 
-def projectName = ""
-gradle.addProjectEvaluationListener(new ProjectEvaluationListener() {
-    @Override
-    void beforeEvaluate(Project project) {
-        projectName = project.name
-        println "Hook3: ${project.name} Project beforeEvaluate"
+gradle.beforeProject { Project project ->
+    if(!configHasBegin){
+        configHasBegin = true
+        beginOfConfig = System.currentTimeMillis()
     }
+    beginOfProjectConfig.put(project,System.currentTimeMillis())
+}
 
-    @Override
-    void afterEvaluate(Project project, ProjectState state) {
-        println "Hook4: ${project.name} Project afterEvaluate"
+gradle.afterProject { Project project ->
+    def begin = beginOfProjectConfig.get(project)
+    if(project.getName() == projectName){
+        println "root project ${projectName} spends ${System.currentTimeMillis()- begin} ms on cnfiguration stage"
+    }else{
+        println "sub project ${project.name} spends ${System.currentTimeMillis() - begin} ms on configuration stage"
     }
-})
-
-gradle.beforeProject {
-    println "Hook3_2: ${projectName} beforeProject..."
-}
-gradle.afterProject {
-    println "Hook4_2: ${projectName} afterProject..."
-}
-
-def rootProjectName = rootProject.getName()
-gradle.projectsEvaluated {
-    println "Hook5: ${rootProjectName} projectsEvaluated..."
 }
 
 gradle.taskGraph.whenReady {
-    println "Hook6: ${rootProjectName} whenReady..."
+    println "Whole ${projectName} spends ${System.currentTimeMillis() - beginOfConfig} ms on configuration stage"
+    beginOfTaskExecute = System.currentTimeMillis()
 }
 
 gradle.taskGraph.beforeTask {
-    task -> {
-        println "Hook7: This is the task ${task.name} -> beforeTask"
-    }
-}
-
-gradle.taskGraph.afterTask {
-    task -> {
-        println "Hook8: This is the task ${task.name} -> afterTask"
+    Task task -> {
+        task.doFirst {
+            task.ext.beginOfTask = System.currentTimeMillis()
+        }
+        task.doLast{
+            println "${task.name} spends ${System.currentTimeMillis() - task.ext.beginOfTask} ms"
+        }
     }
 }
 
 gradle.buildFinished {
-    println "Hook9: buildFinished..."
+    println "Execution stage spends ${System.currentTimeMillis() - beginOfTaskExecute} ms"
+    println "The whole building stage spends ${System.currentTimeMillis() - beginOfSetting} ms"
 }
+
+gradle.taskGraph.addTaskExecutionGraphListener {new TaskExecutionGraphListener(){
+    @Override
+    void graphPopulated(TaskExecutionGraph taskExecutionGraph){
+        taskExecutionGraph.allTasks.forEach {
+            Task task -> {
+                taskExecutionGraph.allTasks.forEach {
+                    Task releaseTask -> {
+                        println "Artist:"+ releaseTask.getProject().name + ":" + releaseTask.name
+                    }
+                }
+            }
+        }
+    }
+}}

@@ -1,5 +1,9 @@
 package com.artists.recursion;
 
+/**
+ * Master: T(N) = 3*T(N/2) + O(1)
+ * Time Complexity: O(N)
+ */
 public class GetMax {
 
     public static int getMax(int[] arr){

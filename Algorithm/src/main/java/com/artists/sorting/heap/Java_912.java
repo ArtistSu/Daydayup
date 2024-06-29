@@ -1,4 +1,4 @@
-package com.artists.sorting.heapsort;
+package com.artists.sorting.heap;
 
 /**
  * Heapsort

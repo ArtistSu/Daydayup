@@ -15,8 +15,8 @@ import java.util.Set;
  * Reverse pair:
  * (3,2) (3,0) (2,0) (4,0)(5,0)
  *
- * Time Complexity:
- * Space Complexity:
+ * Time Complexity:O(nlogn)
+ * Space Complexity:O(n)
  */
 public class ReversePair {
 
@@ -68,13 +68,12 @@ public class ReversePair {
         }
         return res;
     }
+
     public static void main(String[] args) {
         int[] arr = new int[]{3,2,4,5,0};
 
         for (String s : reversePair(arr)) {
             System.out.println(s);
         }
-
-
     }
 }

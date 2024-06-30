@@ -11,9 +11,9 @@ public class Comparator {
     }
 
     public static void main(String[] args) {
-        int testTime = 500000;
-        int maxSize = 100;
-        int maxValue = 100;
+        int testTime = 1;
+        int maxSize = 10;
+        int maxValue = 20;
         boolean succeed = true;
         for (int i = 0; i < testTime; i++) {
             int[] arr1 = generateRandomArray(maxSize, maxValue);

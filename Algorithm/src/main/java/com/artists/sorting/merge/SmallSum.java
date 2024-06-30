@@ -13,6 +13,9 @@ package com.artists.sorting.merge;
  * 1,3,4,2 smaller than 5 on its left-hand side
  *
  * So the array's small sum is 1 + (1+3) + (1) + (1+3+4+2) = 16
+ *
+ * Time Complexity: O(nlogn)
+ * Space Complexity: O(n)
  */
 public class SmallSum {
     public static int smallSum(int[] arr){
@@ -53,4 +56,5 @@ public class SmallSum {
         }
         return smallSum;
     }
+
 }

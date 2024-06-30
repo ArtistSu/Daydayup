@@ -20,7 +20,7 @@ public class QuickSort {
             Xor.swap(arr,left + (int)(Math.random()*(right-left + 1)),right);
             int[] p = partition(arr,left,right);
             quickSort(arr,left,p[0]-1); // > [specific number]
-            quickSort(arr,p[0]+1,right); // < [specific number]
+            quickSort(arr,p[1]+1,right); // < [specific number]
         }
     }
 

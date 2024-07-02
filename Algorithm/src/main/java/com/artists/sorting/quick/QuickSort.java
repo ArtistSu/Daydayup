@@ -4,7 +4,7 @@ import com.artists.common.Xor;
 
 /**
  * Quick Sort
- * Time Complexity: O(n)
+ * Time Complexity: O(nlogn)
  * Space Complexity: O(logn)
  */
 public class QuickSort {

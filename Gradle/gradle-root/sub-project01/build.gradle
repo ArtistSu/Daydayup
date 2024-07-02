@@ -23,3 +23,16 @@ task cross_project_task {
         println "This is task in sub-project01"
     }
 }
+
+/**
+ * Hook test
+ */
+task Hook_B {
+    println "sub-project01 Hook_B"
+    doFirst {
+        println "sub-project01 Hook_B doFirst"
+    }
+    doLast{
+        println "sub-project01 Hook_B doLast"
+    }
+}

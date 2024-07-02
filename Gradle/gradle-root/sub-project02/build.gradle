@@ -17,3 +17,26 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+/**
+ * Hook test
+ */
+task Hook_C {
+    dependsOn 'Hook_D'
+    println "sub-project02 Hook_C"
+    doFirst {
+        println "sub-project02 Hook_C doFirst"
+    }
+    doLast{
+        println "sub-project02 Hook_C doLast"
+    }
+}
+task Hook_D {
+    println "sub-project02 Hook_D"
+    doFirst {
+        println "sub-project02 Hook_D doFirst"
+    }
+    doLast{
+        println "sub-project02 Hook_D doLast"
+    }
+}

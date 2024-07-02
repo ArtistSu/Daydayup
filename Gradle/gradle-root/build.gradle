@@ -1,9 +1,74 @@
 import java.time.Duration
-
+/**
+ * Custom plugin in all project
+ * buildscript must at top
+ */
+buildscript {
+    repositories {
+        maven {url "$rootDir/lib/release"}
+    }
+    dependencies {
+        classpath "com.artists.plugin:library:1.0"
+    }
+}
+/**
+ * Binary Plugins
+ */
+// i.Use plugins DSL
 plugins {
     id 'java'
     id 'application'
+    // Third-party plugin
+    id("hmcts.ccd.sdk") version "5.5.6"
+    id 'maven-publish'
+    id 'java-library' // If publish war, need war plugin
 }
+// 2. apply(map specific parameters)
+// apply[plugin id || Full Class Name || Plugin Class Name]
+//apply plugin:'java' // plugin id
+//apply plugin:org.gradle.api.plugins.JavaPlugin // Full Class Name
+// org.gradle.api.plugins default import
+//apply plugin:JavaPlugin // Plugin Class Name
+
+// 3. apply(closure)
+//apply {
+//    plugin 'java'
+//}
+
+/**
+ * Custom Plugin
+ */
+class GreetingPlugin implements Plugin<Project> {
+    void apply(Project project) {
+        project.task('hello') {
+            doLast {
+                println 'Hello from the GreetingPlugin'
+            }
+        }
+    }
+}
+// Apply the plugin
+apply plugin: GreetingPlugin
+apply plugin: 'GlobalBuildSrcPlugin'
+
+
+/**
+ * Apply Global Custom Plugin in current project
+ */
+//apply plugin: 'java-gradle-plugin'
+//gradlePlugin {
+//    plugins {
+//        greeting {
+//            // plugin id
+//            id = 'BuildSrcPlugin'
+//            // implementation class
+//            implementationClass = 'com.artists.BuildSrcPlugin'
+//        }
+//    }
+//}
+apply plugin: 'BuildSrcPlugin'
+
+
 
 group = 'com.artists'
 version = '1.0-SNAPSHOT'
@@ -35,7 +100,30 @@ dependencies {
     implementation files('lib/mysql.jar','lib/log4j.jar')
     // Dependent on all jars under lib directory, can also use excludes
     implementation fileTree('dir':'lib',includes: ['*.jar'])
+
+    // Exclude dependencies
+    implementation('org.hibernate:hibernate-core:3.6.3.Final'){
+//        exclude group:'org.slf4j'
+
+//        // You can also use module to exclude the dependency
+//        exclude module:'slf4j-api'
+//        exclude group:'org.slf4j',module:'slf4j-api'
+//        transitive(false)
+    }
+    implementation 'org.slf4j:slf4j-api:1.4.0!!'
+//    implementation 'org.slf4j:slf4j-api:1.4.0'{
+//        version{
+//            strictly("1.4.0")
+//        }
+//    }
 }
+
+// When there is dependencies conflict, it will failed during the build stage
+//configurations.all(){
+//    Configuration configuration -> {
+//        configuration.resolutionStrategy.failOnVersionConflict()
+//    }
+//}
 
 test {
     useJUnitPlatform()
@@ -433,4 +521,63 @@ task archiveTask(type:Zip) {
     into 'build'
     archiveBaseName ='archiveTask'
     destinationDirectory= archivesDirPath
+}
+
+/**
+ * Script Plugin
+ * apply from: [file absolute path | relative path]
+ */
+apply from:'script_plugin.gradle'
+task scriptPluginTest{
+    doLast {
+        println("The author is ${author}, and JDK version is ${conf.jdkVersion}, the spring version is ${spring.version}")
+    }
+}
+
+/**
+ * Publish a project
+ */
+publishing {
+    publications {
+        myLibrary(MavenPublication){
+            groupId='org.gradle.sample'
+            artifactId='library'
+            version='1.0'
+            from components.java // publish jar
+//            from components.web // publish war
+        }
+    }
+    repositories{
+        // Path of local maven repository: $USER_HOME/.m2/repository
+        mavenLocal()
+        // Publish to private repository
+        maven{
+            name='myRepo' // Repository name(optional)
+            // Publish address can be local repository or Maven private repository
+            def releasesRepoUrl=layout.buildDirectory.dir('repos/releases')
+            def snapshotsRepoUrl=layout.buildDirectory.dir('repos/snapshots')
+            //  url is required not optional
+            url = version.endsWith('SNAPSHOT')?snapshotsRepoUrl:releasesRepoUrl
+            // If you want to publish to remote private maven repository
+            // url = 'http://my.artists/repo'
+            // Credential
+//            credentials {
+//                username = 'joe'
+//                password = 'secret'
+//            }
+        }
+    }
+}
+
+/**
+ * Hook test
+ */
+task Hook_A {
+    println "root Hook_A"
+    doFirst {
+        println "root Hook_A doFirst"
+    }
+    doLast{
+        println "root Hook_A doLast"
+    }
 }

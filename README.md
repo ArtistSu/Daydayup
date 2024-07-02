@@ -14,6 +14,7 @@ I hope we can day day up
 # Project Structure
 |Project Name| Branch | Description|
 |------------|--------|------------|
+|Algorithm|AlgorithmStudy|Leetcode practice note|
 |gradel01|GradleStudy|Use spring initializr to create project|
 |gradel02|GradleStudy|Use gradle command to create project|
 |gradle03|GradleStudy|Create general JAVA project with Gradle by IDEA|

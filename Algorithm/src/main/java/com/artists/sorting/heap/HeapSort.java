@@ -7,6 +7,21 @@ import com.artists.common.Xor;
  * Space Complexity: O(1)
  */
 public class HeapSort {
+
+    public static void heapSort(int[] arr){
+        if(arr == null ||arr.length < 2){
+            return;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            heapInsert(arr,i);
+        }
+        int heapSize = arr.length;
+        Xor.swap(arr,0,--heapSize);
+        while(heapSize > 0){
+            heapify(arr,0,heapSize);
+            Xor.swap(arr,0,--heapSize);
+        }
+    }
     public static void heapify(int[] arr, int index, int heapSize) {
         int left = index * 2 + 1;
         int right = index * 2 + 2;

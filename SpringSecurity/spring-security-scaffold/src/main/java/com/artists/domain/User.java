@@ -1,5 +1,7 @@
 package com.artists.domain;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,9 +10,11 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@TableName("USER")
 public class User {
     private static final long serialVersionUID = -40356785423868312L;
 
+    @TableId
     private Long id;
     private String userName;
     private String nickName;
@@ -22,7 +26,7 @@ public class User {
      */
     private String status;
     private String email;
-    private String phonenumber;
+    private String phoneNumber;
     /**
      * 0 -> Female
      * 1 -> Male
@@ -37,16 +41,8 @@ public class User {
     /**
      * The uid of creator
      */
-    private Long createBy;
-    private Date createTime;
-    /**
-     * The uid of who update user details
-     */
-    private Long updateBy;
-    private Long updateTime;
-    /**
-     * 0 -> Not del
-     * 1 -> Del
-     */
-    private Integer delFlag;
+    private String userId;
+
+    private String createTime;
+    private String updateTime;
 }

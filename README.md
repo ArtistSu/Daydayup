@@ -19,3 +19,4 @@ I hope we can day day up
 |gradle03|GradleStudy|Create general JAVA project with Gradle by IDEA|
 |GroovyGrammar|GroovyStudy|Basic groovy grammar|
 |ScalaGrammar|ScalaStudy|Scala grammar|
+|spring-security-scaffold|SpringSecurityStudy|Quickly to use spring-security to build up login system|

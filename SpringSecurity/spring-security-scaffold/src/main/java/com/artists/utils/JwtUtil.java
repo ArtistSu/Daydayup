@@ -22,20 +22,18 @@ public class JwtUtil {
         String token = UUID.randomUUID().toString().replaceAll("-","");
         return token;
     }
+    public static String createJWT(String subject){
+        JwtBuilder builder = getJwtBuilder(subject,null,getUUID());
+        return builder.compact();
+    }
 
-    /**
-     * Generate JWT
-     * @param subject
-     * @param ttlMillis
-     * @return
-     */
     public static String createJWT(String subject, Long ttlMillis){
         JwtBuilder builder = getJwtBuilder(subject, ttlMillis, getUUID());
         return builder.compact();
     }
 
     private static JwtBuilder getJwtBuilder(String subject, Long ttlMillis, String uuid){
-        SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.ES256;
+        SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
         SecretKey secretKey = generalKey();
         long nowMillis = System.currentTimeMillis();
         Date now = new Date(nowMillis);

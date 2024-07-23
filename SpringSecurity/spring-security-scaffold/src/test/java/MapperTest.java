@@ -22,8 +22,8 @@ public class MapperTest {
     @Test
     public void testBCryptPasswordEncoder(){
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String encode = passwordEncoder.encode("1234");
-        String encode2 = passwordEncoder.encode("1234");
+        String encode = passwordEncoder.encode("123456");
+        String encode2 = passwordEncoder.encode("123456");
         System.out.println(encode);
         System.out.println(encode2);
     }

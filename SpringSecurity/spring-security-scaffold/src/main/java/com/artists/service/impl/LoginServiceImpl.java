@@ -38,7 +38,7 @@ public class LoginServiceImpl implements LoginService {
         HashMap<String, String> map = new HashMap<>();
         map.put("token",jwt);
         // 2. Put user information in redis
-//        redisCache.setCacheObject("login:"+userId,loginUser);
+        redisCache.setCacheObject("login:"+userId,loginUser);
         return new ResponseResult(200,"Login Successfully", map);
     }
 }

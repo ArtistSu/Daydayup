@@ -4,10 +4,7 @@ import com.artists.domain.ResponseResult;
 import com.artists.domain.User;
 import com.artists.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class LoginController {
@@ -19,5 +16,10 @@ public class LoginController {
     public ResponseResult login(@RequestBody User user){
         System.out.println("Here");
         return loginService.login(user);
+    }
+
+    @RequestMapping("/user/logout")
+    public ResponseResult logout(){
+        return loginService.logout();
     }
 }

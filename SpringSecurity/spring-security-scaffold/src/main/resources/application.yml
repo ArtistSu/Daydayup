@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:mysql://34.70.18.134:3310/rhino_blog?characterEncoding=utf-8&serverTimeZone=UTC
+    url: jdbc:mysql://34.121.89.28:3310/rhino_blog?characterEncoding=utf-8&serverTimeZone=UTC
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
-    host: 34.70.18.134
+    host: 34.121.89.28
     port: 6379

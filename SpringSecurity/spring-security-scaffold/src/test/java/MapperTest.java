@@ -1,5 +1,6 @@
 import com.artists.SecurityApplication;
 import com.artists.domain.User;
+import com.artists.mapper.MenuMapper;
 import com.artists.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,9 @@ import java.util.List;
 public class MapperTest {
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private MenuMapper menuMapper;
 
     @Test
     public void testUserMapper(){
@@ -26,5 +30,11 @@ public class MapperTest {
         String encode2 = passwordEncoder.encode("123456");
         System.out.println(encode);
         System.out.println(encode2);
+    }
+
+    @Test
+    public void testSelectPermsByUserId(){
+        List<String> res = menuMapper.selectPermsByUserId(Long.valueOf(2));
+        System.out.println(res);
     }
 }

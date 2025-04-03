@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://34.135.6.146:3310/rhino_blog?characterEncoding=utf-8&serverTimeZone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 34.135.6.146
+    port: 6379
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+server:
+    port: 8888

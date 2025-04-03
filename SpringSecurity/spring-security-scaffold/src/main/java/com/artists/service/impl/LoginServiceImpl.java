@@ -18,7 +18,6 @@ import java.util.Objects;
 
 @Service
 public class LoginServiceImpl implements LoginService {
-
     @Autowired
     private AuthenticationManager authenticationManager;
 

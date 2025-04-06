@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operate DOM</title>
+</head>
+<body>
+    <span id="textBox">0</span>
+    <br>
+    <button id="submit">Add</button>
+
+    <script>
+        let textBox = document.querySelector("#textBox"),
+            submit = document.querySelector("#submit");
+
+        let num = 0;
+        submit.addEventListener('click',function(){
+            num++;
+            textBox.innerHTML = num;
+        })
+
+    </script>
+</body>
+</html>

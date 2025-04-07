@@ -9,6 +9,7 @@ import Day03Slot from "./views/Day03-slot";
 import Vote from "./views/Day03-staticComponent";
 import ClassUseCase from "./views/Day04-classUseCase";
 import VoteDynamic from "./views/Day04-dynamicComponent";
+import Day05 from "./views/Day05-ref";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 let context = "Allen 1st Demo";
@@ -98,5 +99,8 @@ root.render(
     <h3> F12 filter "ClassUseCase" to check the result </h3>
 
     <VoteDynamic title="This is Dynamic Component" />
+
+    {/* Day05 */}
+    <Day05></Day05>
   </>
 );

@@ -10,6 +10,8 @@ import Vote from "./views/Day03-staticComponent";
 import ClassUseCase from "./views/Day04-classUseCase";
 import VoteDynamic from "./views/Day04-dynamicComponent";
 import Day05 from "./views/Day05-ref";
+import Day06 from "./views/Day06-setState";
+import Day07 from "./views/Day07-syntheticExvent";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 let context = "Allen 1st Demo";
@@ -102,5 +104,11 @@ root.render(
 
     {/* Day05 */}
     <Day05></Day05>
+
+    {/* Day06 */}
+    <Day06></Day06>
+
+    {/* Day07 */}
+    <Day07></Day07>
   </>
 );
